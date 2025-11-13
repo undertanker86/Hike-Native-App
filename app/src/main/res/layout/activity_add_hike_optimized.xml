@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <!-- App Bar Layout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary_green"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Basic Information Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Basic Information"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_green"
+                        android:drawableStart="@android:drawable/ic_menu_info_details"
+                        android:drawablePadding="8dp"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Name Field -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Hike Name *"
+                        app:boxStrokeColor="@color/primary_green"
+                        app:hintTextColor="@color/primary_green"
+                        app:errorEnabled="true"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:maxLines="1" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Date Field -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Date *"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_dark"
+                        android:layout_marginBottom="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            app:boxStrokeColor="@color/primary_green"
+                            app:hintTextColor="@color/primary_green"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Select date"
+                                android:focusable="false"
+                                android:clickable="true"
+                                android:inputType="none"
+                                android:drawableEnd="@drawable/ic_calendar"
+                                android:drawablePadding="8dp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_select_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="56dp"
+                            android:text="Pick"
+                            app:backgroundTint="@color/primary_green"
+                            app:cornerRadius="12dp" />
+
+                    </LinearLayout>
+
+                    <!-- Description Field -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Description (Optional)"
+                        app:boxStrokeColor="@color/primary_green"
+                        app:hintTextColor="@color/primary_green"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:minLines="2"
+                            android:maxLines="4"
+                            android:gravity="top|start" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Location Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Location *"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_green"
+                        android:drawableStart="@android:drawable/ic_menu_mylocation"
+                        android:drawablePadding="8dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_location"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Search or use current location"
+                            app:boxStrokeColor="@color/primary_green"
+                            app:hintTextColor="@color/primary_green"
+                            app:errorEnabled="true"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_location"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textCapWords"
+                                android:maxLines="2" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="8dp">
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_get_current_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:contentDescription="Get current location"
+                                app:backgroundTint="@color/primary_green"
+                                app:tint="@color/white"
+                                app:fabSize="mini"
+                                app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+                            <ImageButton
+                                android:id="@+id/btn_refresh_location"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginBottom="4dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:contentDescription="Refresh location"
+                                android:src="@android:drawable/ic_popup_sync"
+                                android:tint="@color/primary_green"
+                                android:visibility="gone" />
+
+                            <ImageButton
+                                android:id="@+id/btn_reset_location"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:contentDescription="Reset location"
+                                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                                android:tint="@color/primary_green"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- RecyclerView for autocomplete suggestions -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_location_suggestions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"
+                        android:background="@color/background_card"
+                        android:elevation="2dp"
+                        android:maxHeight="180dp" />
+
+                    <!-- Parking Available -->
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cb_parking_available"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parking Available"
+                        android:layout_marginTop="12dp"
+                        app:buttonTint="@color/primary_green"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Trail Details Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Trail Details"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_green"
+                        android:drawableStart="@drawable/ic_trail"
+                        android:drawablePadding="8dp"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Length and Duration in Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_length"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:hint="Length *"
+                            app:boxStrokeColor="@color/primary_green"
+                            app:hintTextColor="@color/primary_green"
+                            app:suffixText="km"
+                            app:errorEnabled="true"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_estimated_duration"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:hint="Duration *"
+                            app:boxStrokeColor="@color/primary_green"
+                            app:hintTextColor="@color/primary_green"
+                            app:suffixText="hrs"
+                            app:errorEnabled="true"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_estimated_duration"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <!-- Difficulty Level -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Difficulty Level *"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_dark"
+                        android:layout_marginBottom="8dp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_difficulty"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@drawable/spinner_background"
+                        android:padding="12dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Weather Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/accent_orange"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Weather Forecast *"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/accent_orange"
+                        android:drawableStart="@android:drawable/ic_dialog_info"
+                        android:drawablePadding="8dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@color/background_card"
+                        android:padding="12dp"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:id="@+id/tv_weather_condition"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="15sp"
+                            android:textColor="@color/text_dark"
+                            android:text="No weather data" />
+
+                        <TextView
+                            android:id="@+id/tv_weather_temp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/accent_orange"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_get_weather_forecast"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:text="Get Forecast"
+                            android:textSize="14sp"
+                            app:icon="@android:drawable/ic_dialog_info"
+                            app:iconGravity="textStart"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            app:strokeColor="@color/accent_orange"
+                            app:iconTint="@color/accent_orange"
+                            android:textColor="@color/accent_orange"
+                            app:cornerRadius="12dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_select_weather"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:text="Manual"
+                            android:textSize="14sp"
+                            app:backgroundTint="@color/accent_orange"
+                            app:cornerRadius="12dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_weather_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="12sp"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Save Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="Save Hike"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:icon="@android:drawable/ic_menu_save"
+                app:iconGravity="textStart"
+                app:backgroundTint="@color/primary_green"
+                app:cornerRadius="12dp"
+                app:elevation="4dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

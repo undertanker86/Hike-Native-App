@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "979884094258",
+    "firebase_url": "https://yoga-firebase-app-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "yoga-firebase-app",
+    "storage_bucket": "yoga-firebase-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979884094258:android:4d3da33bb3e25bb85fdd2b",
+        "android_client_info": {
+          "package_name": "com.example.hikenativeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979884094258-13sqpmh9kma27u1ivfhq9e62cls74avr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hikenativeapp",
+            "certificate_hash": "64fab1b6a3d12880adfafa84af1707057e6f58a3"
+          }
+        },
+        {
+          "client_id": "979884094258-bi7t19798v3l489npop05m6hl423n9ji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRBbaoRfdhYCckc5ZIOMwBt2xFXsswrfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979884094258-bi7t19798v3l489npop05m6hl423n9ji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979884094258:android:de29ec050c0ac2a85fdd2b",
+        "android_client_info": {
+          "package_name": "com.example.yogaadminproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979884094258-jshsgv3u66n854k2oqo7vlkfpngpklnm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yogaadminproject",
+            "certificate_hash": "64fab1b6a3d12880adfafa84af1707057e6f58a3"
+          }
+        },
+        {
+          "client_id": "979884094258-bi7t19798v3l489npop05m6hl423n9ji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRBbaoRfdhYCckc5ZIOMwBt2xFXsswrfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979884094258-bi7t19798v3l489npop05m6hl423n9ji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979884094258:android:bbb17303723697125fdd2b",
+        "android_client_info": {
+          "package_name": "com.example.yogaproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979884094258-v3qd1pseq1r4a8ggmjpp8j1b4ljsj272.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yogaproject",
+            "certificate_hash": "64fab1b6a3d12880adfafa84af1707057e6f58a3"
+          }
+        },
+        {
+          "client_id": "979884094258-bi7t19798v3l489npop05m6hl423n9ji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRBbaoRfdhYCckc5ZIOMwBt2xFXsswrfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979884094258-bi7t19798v3l489npop05m6hl423n9ji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

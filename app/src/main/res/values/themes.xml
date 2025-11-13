@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HikeNativeApp" parent="Theme.Material3.DayNight">
+        <!-- Disable default ActionBar to use custom Toolbar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary_green</item>
+        <item name="colorPrimaryVariant">@color/primary_dark_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/accent_orange</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorOnBackground">@color/text_dark</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/primary_dark_green</item>
+    </style>
+
+    <!-- Theme for activities without ActionBar (like Login) -->
+    <style name="Theme.HikeNativeApp.NoActionBar" parent="Theme.HikeNativeApp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Custom ActionBar Title Style -->
+    <style name="CustomActionBarTitle" parent="TextAppearance.Material3.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Custom ActionBar Subtitle Style -->
+    <style name="CustomActionBarSubtitle" parent="TextAppearance.Material3.ActionBar.Subtitle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

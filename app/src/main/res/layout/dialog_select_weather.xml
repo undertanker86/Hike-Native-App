@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Weather Condition"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_sunny"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sunny"
+            android:padding="8dp" />
+
+        <RadioButton
+            android:id="@+id/radio_partly_cloudy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Partly Cloudy"
+            android:padding="8dp" />
+
+        <RadioButton
+            android:id="@+id/radio_cloudy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cloudy"
+            android:padding="8dp" />
+
+        <RadioButton
+            android:id="@+id/radio_rainy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rainy"
+            android:padding="8dp" />
+
+        <RadioButton
+            android:id="@+id/radio_stormy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stormy"
+            android:padding="8dp" />
+
+        <RadioButton
+            android:id="@+id/radio_snowy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Snowy"
+            android:padding="8dp" />
+
+        <RadioButton
+            android:id="@+id/radio_foggy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Foggy"
+            android:padding="8dp" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <EditText
+            android:id="@+id/et_dialog_temperature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Temperature (°C)"
+            android:inputType="numberDecimal"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_dialog_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+        <Button
+            android:id="@+id/btn_dialog_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            style="@style/Widget.MaterialComponents.Button" />
+    </LinearLayout>
+</LinearLayout>

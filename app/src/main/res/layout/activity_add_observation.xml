@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <!-- App Bar Layout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary_green"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- ProgressBar for loading state -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Observation Text Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Observation Text"
+                app:boxStrokeColor="@color/primary_green"
+                app:hintTextColor="@color/primary_green"
+                app:errorEnabled="true"
+                app:startIconTint="@color/primary_green"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_observation_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="3"
+                    android:maxLines="6"
+                    android:gravity="top|start"
+                    android:padding="16dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Date and Time Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/primary_green">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Date &amp; Time *"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_dark"
+                        android:drawableStart="@drawable/ic_calendar"
+                        android:drawablePadding="8dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:boxStrokeColor="@color/primary_green"
+                        app:hintTextColor="@color/primary_green"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_observation_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Selected Date &amp; Time"
+                            android:focusable="false"
+                            android:clickable="false"
+                            android:inputType="none"
+                            android:padding="16dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_select_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="Select Date and Time"
+                        android:textSize="16sp"
+                        app:icon="@drawable/ic_calendar"
+                        app:iconGravity="textStart"
+                        app:backgroundTint="@color/primary_green"
+                        app:cornerRadius="12dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Comments Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Additional Comments (Optional)"
+                app:boxStrokeColor="@color/primary_green"
+                app:hintTextColor="@color/primary_green"
+                app:startIconDrawable="@android:drawable/ic_menu_info_details"
+                app:startIconTint="@color/primary_green"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="2"
+                    android:maxLines="4"
+                    android:gravity="top|start"
+                    android:padding="16dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Photo Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/primary_green">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Photo (Optional)"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_dark"
+                        android:drawableStart="@android:drawable/ic_menu_gallery"
+                        android:drawablePadding="8dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_observation_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginBottom="12dp"
+                        android:scaleType="centerCrop"
+                        android:background="@color/background_card"
+                        android:contentDescription="Observation photo"
+                        android:visibility="gone"
+                        app:cornerRadius="8dp" />
+
+                    <!-- Photo Buttons - Vertical Stack -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_take_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="Take Photo"
+                            android:textSize="15sp"
+                            app:icon="@android:drawable/ic_menu_camera"
+                            app:iconGravity="textStart"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            app:strokeColor="@color/primary_green"
+                            app:iconTint="@color/primary_green"
+                            android:textColor="@color/primary_green"
+                            app:cornerRadius="12dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_select_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="Select Photo from Gallery"
+                            android:textSize="15sp"
+                            app:icon="@android:drawable/ic_menu_gallery"
+                            app:iconGravity="textStart"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            app:strokeColor="@color/primary_green"
+                            app:iconTint="@color/primary_green"
+                            android:textColor="@color/primary_green"
+                            app:cornerRadius="12dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_remove_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:text="Remove Photo"
+                            android:textSize="15sp"
+                            android:visibility="gone"
+                            app:icon="@android:drawable/ic_menu_close_clear_cancel"
+                            app:iconGravity="textStart"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            app:iconTint="@android:color/holo_red_dark"
+                            android:textColor="@android:color/holo_red_dark"
+                            app:cornerRadius="12dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:weightSum="2">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Cancel"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:strokeColor="@color/text_secondary"
+                    android:textColor="@color/text_secondary"
+                    app:cornerRadius="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Save Observation"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:icon="@android:drawable/ic_menu_save"
+                    app:iconGravity="textStart"
+                    app:backgroundTint="@color/primary_green"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

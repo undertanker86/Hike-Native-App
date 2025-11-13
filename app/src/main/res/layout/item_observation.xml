@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@color/background_card">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Accent Bar -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/accent_orange" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Header with Icon and Edit Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <!-- Observation Icon -->
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/binocular"
+                    android:layout_marginEnd="12dp"
+                    android:padding="8dp"
+                    android:contentDescription="@string/observations" />
+
+                <!-- Observation Text -->
+                <TextView
+                    android:id="@+id/tv_observation_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Observation text"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Edit Button -->
+                <ImageButton
+                    android:id="@+id/btn_edit_observation"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Edit"
+                    android:src="@android:drawable/ic_menu_edit"
+                    app:tint="@color/accent_orange"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+
+            <!-- Time Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_background"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_calendar"
+                    app:tint="@color/accent_orange"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/date_icon" />
+
+                <TextView
+                    android:id="@+id/tv_observation_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time: 2024-01-01 12:00"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Photo (if available) -->
+            <LinearLayout
+                android:id="@+id/ll_photo_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_observation_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Observation photo"
+                    android:background="@color/background_light"
+                    android:layout_marginBottom="8dp" />
+
+            </LinearLayout>
+
+            <!-- Comments Section (if available) -->
+            <LinearLayout
+                android:id="@+id/layout_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    android:layout_marginVertical="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_info_details"
+                        app:tint="@color/info"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Comments" />
+
+                    <TextView
+                        android:id="@+id/tv_observation_comments"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Comments"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:maxLines="3"
+                        android:ellipsize="end" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

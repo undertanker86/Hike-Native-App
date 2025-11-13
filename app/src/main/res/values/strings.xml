@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hike Native App</string>
+    <string name="change_language">Change Language</string>
+
+    <!-- Authentication strings -->
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="welcome_message">Welcome to Hike App!</string>
+
+    <!-- Firebase Web Client ID - This will be auto-generated when you build -->
+    <string name="default_web_client_id" translatable="false">979884094258-bi7t19798v3l489npop05m6hl423n9ji.apps.googleusercontent.com</string>
+
+    <!-- Error messages -->
+    <string name="auth_failed">Authentication failed</string>
+    <string name="google_sign_in_failed">Google sign in failed</string>
+    <string name="sign_out_success">Signed out successfully</string>
+
+    <!-- General UI strings -->
+    <string name="loading">Loading...</string>
+    <string name="your_hiking_adventures">Your Hiking Adventures</string>
+    <string name="track_hiking_message">Start tracking your hiking journeys and observations. More features coming soon!</string>
+
+    <!-- Stats -->
+    <string name="hikes">Hikes</string>
+    <string name="observations">Observations</string>
+    <string name="distance">Distance</string>
+    <string name="level">Level</string>
+
+    <!-- Weather strings -->
+    <string name="date_beyond_forecast_range">Selected date is beyond the forecast range. Please select weather manually.</string>
+    <string name="weather_error_message">Error: %1$s</string>
+
+    <!-- Hike item actions -->
+    <string name="edit_hike">Edit hike</string>
+    <string name="open_in_map">Open in Map</string>
+
+    <!-- Search UI strings -->
+    <string name="search_by_name">Search by name</string>
+    <string name="search">Search</string>
+    <string name="clear">Clear</string>
+    <string name="parking">Parking</string>
+    <string name="no_parking">No Parking</string>
+    <string name="filter_by_distance">Filter by Distance (km)</string>
+    <string name="min_km">Min (km)</string>
+    <string name="max_km">Max (km)</string>
+
+    <!-- Content descriptions -->
+    <string name="hike_icon">Hike icon</string>
+    <string name="location_icon">Location icon</string>
+    <string name="date_icon">Date icon</string>
+    <string name="parking_icon">Parking icon</string>
+    <string name="search_icon">Search icon</string>
+
+    <!-- Chatbot strings -->
+    <string name="chatbot_title">Hiking Assistant</string>
+    <string name="chatbot_welcome">Ask me anything about your hikes!</string>
+    <string name="hint_ask_question">Ask a question...</string>
+    <string name="send_message">Send message</string>
+    <string name="error_empty_message">Please enter a message</string>
+    <string name="chatbot_icon">Chatbot icon</string>
+    <string name="chatbot_menu">AI Assistant</string>
+    <string name="typing_indicator">Handling...</string>
+
+</resources>
