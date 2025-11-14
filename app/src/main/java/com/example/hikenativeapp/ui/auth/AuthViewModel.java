@@ -43,9 +43,6 @@ public class AuthViewModel extends ViewModel {
         this.Userepository = Userrepository;
     }
 
-    public void setGoogleSignInClient(GoogleSignInClient client) {
-        this.googleSignInClient = client;
-    }
 
     public LiveData<AuthState<User>> getAuthState() {
         return authState;

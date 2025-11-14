@@ -106,13 +106,13 @@ public class EditHikeViewModel extends ViewModel {
                     @Override
                     public void onSuccess(String message) {
                         Log.d(TAG, "Sync successful: " + message);
-                        syncStatus.postValue("Đã đồng bộ lên cloud");
+                        syncStatus.postValue("Sync successful: " + message);
                     }
 
                     @Override
                     public void onError(String error) {
                         Log.w(TAG, "Sync failed: " + error);
-                        syncStatus.postValue("Cập nhật local thành công (sẽ sync sau)");
+                        syncStatus.postValue("Update local successful, but sync failed: " + error);
                     }
                 });
 

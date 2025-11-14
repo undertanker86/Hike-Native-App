@@ -244,27 +244,5 @@ public class LocationSearchHelper {
         void onError(String error);
     }
 
-    /**
-     * Create RectangularBounds from center coordinates and radius
-     * @param center Center coordinates
-     * @param radiusInKm Radius in kilometers
-     * @return RectangularBounds
-     */
-    public static RectangularBounds createBoundsFromCenter(LatLng center, double radiusInKm) {
-        // Convert km to degrees (approximate)
-        double latOffset = radiusInKm / 111.0;
-        double lngOffset = radiusInKm / (111.0 * Math.cos(Math.toRadians(center.latitude)));
 
-        LatLng southwest = new LatLng(
-                center.latitude - latOffset,
-                center.longitude - lngOffset
-        );
-
-        LatLng northeast = new LatLng(
-                center.latitude + latOffset,
-                center.longitude + lngOffset
-        );
-
-        return RectangularBounds.newInstance(southwest, northeast);
-    }
 }

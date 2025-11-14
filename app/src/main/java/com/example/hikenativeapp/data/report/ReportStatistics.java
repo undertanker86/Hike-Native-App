@@ -1,8 +1,5 @@
 package com.example.hikenativeapp.data.report;
 
-/**
- * Model class chứa dữ liệu thống kê cho Report
- */
 public class ReportStatistics {
     private int totalHikes;
     private double totalDistance;

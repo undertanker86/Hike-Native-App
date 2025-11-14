@@ -32,7 +32,7 @@ public class ChatbotViewModel extends AndroidViewModel {
 
     public void askQuestion(String userId, String question) {
         if (question == null || question.trim().isEmpty()) {
-            errorMessage.setValue("Vui lòng nhập câu hỏi");
+            errorMessage.setValue("Please enter a question.");
             return;
         }
 

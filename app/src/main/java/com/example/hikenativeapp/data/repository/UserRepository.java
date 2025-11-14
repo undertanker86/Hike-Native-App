@@ -34,46 +34,6 @@ public class UserRepository {
             userDao.updateUser(user);
         });
     }
-
-    public void authenticateWithGoogle(GoogleSignInAccount account, OnAuthenticationListener listener) {
-        if (account == null) {
-            listener.onFailure("Google sign-in failed");
-            return;
-        }
-
-        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
-        firebaseAuth.signInWithCredential(credential)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        // Successfully authenticated with Firebase
-                        String googleId = account.getId();
-                        String email = account.getEmail();
-                        String displayName = account.getDisplayName();
-
-                        // Check if user already exists in local database
-                        AppDatabase.databaseWriteExecutor.execute(() -> {
-                            User existingUser = userDao.getUserByGoogleId(googleId);
-                            if (existingUser != null) {
-                                // User exists, update information if needed
-                                existingUser.setEmail(email);
-                                existingUser.setDisplayName(displayName);
-                                userDao.updateUser(existingUser);
-                                listener.onSuccess(existingUser);
-                            } else {
-                                // Create new user
-                                User newUser = new User(googleId, email, displayName, null);
-                                long id = userDao.insertUser(newUser);
-                                newUser.setId((int) id);
-                                listener.onSuccess(newUser);
-                            }
-                        });
-                    } else {
-                        // Authentication failed
-                        listener.onFailure("Firebase authentication failed");
-                    }
-                });
-    }
-
     public void cleanup() {
         // Any cleanup operations if needed
     }

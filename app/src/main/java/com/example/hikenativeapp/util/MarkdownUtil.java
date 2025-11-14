@@ -10,7 +10,6 @@ import io.noties.markwon.ext.tasklist.TaskListPlugin;
 
 /**
  * Utility class để render Markdown text trong TextView
- * Sử dụng thư viện Markwon để hỗ trợ các cú pháp Markdown phổ biến:
  * - **bold**, *italic*, ~~strikethrough~~
  * - Lists (bullet, numbered)
  * - Tables
@@ -49,21 +48,5 @@ public class MarkdownUtil {
         markwon.setMarkdown(textView, markdown);
     }
 
-
-
-    /**
-     * Parse Markdown text thành Spanned (cho preview)
-     * @param context Context
-     * @param markdown Chuỗi Markdown cần parse
-     * @return Spanned text với formatting
-     */
-    public static CharSequence parseMarkdown(Context context, String markdown) {
-        if (context == null || markdown == null) {
-            return markdown;
-        }
-
-        initialize(context);
-        return markwon.toMarkdown(markdown);
-    }
 }
 

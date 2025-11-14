@@ -111,7 +111,7 @@ public class HikeListViewModel extends ViewModel {
         }).start();
     }
 
-    // ==================== SEARCH METHODS ====================
+    // ==================== SEARCH ====================
 
     /**
      * Simple search by name
@@ -142,7 +142,7 @@ public class HikeListViewModel extends ViewModel {
     }
 
     /**
-     * Search by length range
+     * Filter by length range
      */
     public void searchHikesByLengthRange(int userId, double minLength, double maxLength) {
         if (repository == null) {

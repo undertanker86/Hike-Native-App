@@ -49,13 +49,4 @@ public class ObservationListViewModel extends ViewModel {
             }
         }).start();
     }
-
-    public int getObservationCount(int hikeId) {
-        try {
-            return repository.getObservationCountByHikeId(hikeId).get();
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-            return 0;
-        }
-    }
 }

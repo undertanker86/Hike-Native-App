@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hikenativeapp.R;
 import com.example.hikenativeapp.data.local.entity.Hike;
-import com.example.hikenativeapp.util.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;

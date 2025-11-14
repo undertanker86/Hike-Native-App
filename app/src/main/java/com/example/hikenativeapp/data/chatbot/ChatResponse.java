@@ -12,13 +12,6 @@ public class ChatResponse {
     @SerializedName("error")
     private String error;
 
-    public ChatResponse() {
-    }
-
-    public ChatResponse(String answer, String[] sources) {
-        this.answer = answer;
-        this.sources = sources;
-    }
 
     public String getAnswer() {
         return answer;

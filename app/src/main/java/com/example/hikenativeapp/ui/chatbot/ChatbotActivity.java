@@ -55,8 +55,8 @@ public class ChatbotActivity extends AppCompatActivity {
 
         // IMPORTANT: This is the Firebase UID (google_id) that will be sent to backend
         userId = currentUser.getUid();
-        Log.d(TAG, "🔑 Using Firebase UID (google_id): " + userId);
-        Log.d(TAG, "📧 User email: " + currentUser.getEmail());
+        Log.d(TAG, "Using Firebase UID (google_id): " + userId);
+        Log.d(TAG, "User email: " + currentUser.getEmail());
 
         initViews();
         setupToolbar();
@@ -176,7 +176,7 @@ public class ChatbotActivity extends AppCompatActivity {
             return;
         }
 
-        Log.d(TAG, "📤 Sending question to backend with user_id: " + userId);
+        Log.d(TAG, "Sending question to backend with user_id: " + userId);
         viewModel.askQuestion(userId, message);
         editTextMessage.setText("");
 
