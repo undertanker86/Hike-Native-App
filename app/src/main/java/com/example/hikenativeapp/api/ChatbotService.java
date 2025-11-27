@@ -31,7 +31,6 @@ public class ChatbotService {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
-
         return retrofit.create(ChatbotApi.class);
     }
 }
